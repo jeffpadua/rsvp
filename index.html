@@ -40,13 +40,20 @@
 								<div class="intro color4">									
 									<h2 class="major">RSVP</h2>
 									<p>Please enter your Last Name</p><br>
-									<form method="post" action="#">
+									<form action="https://formsubmit.co/jep.padua@gmail.com" method="POST">
 										<div class="fields">
-												<label for="name">Last Name</label>
-												<input type="text" required placeholder="Last Name" name="name" id="name"/>																	
+												<label for="firstname">First Name</label>
+												<input type="text" required placeholder="First Name" name="firstname" id="firstname" />
+												<label for="lastname">Last Name</label>
+												<input type="text" required placeholder="Last Name" name="lastname" id="lastname"/>
+												<br><br>
+												<input type="radio" id="yes" name="demo-priority" class="color2" checked />
+												<label for="yes">Yes</label>	
+												<input type="radio" id="no" name="demo-priority" class="color2" checked />
+												<label for="no">No</label>																
 										</div>
 										<ul class="actions">
-											<li><input type="submit" value="Search ME" class="button primary" /></li>
+											<li><input type="submit" value="Send" class="button primary" /></li>
 											<li><input type="reset" value="Reset" /></li>
 										</ul>
 									</form>
