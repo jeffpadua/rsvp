@@ -2212,7 +2212,7 @@ input, select, textarea {
 			}
 
 			.panel > *.color3 {
-				background-image: url("../../images/overlay.png"), linear-gradient(45deg, #8c9dad, #ADD8E6 80%, #ffe4b4);
+				background-image: url("../../images/overlay.png"), linear-gradient(145deg, #ffe4b4 10%, #8c9dad 70%, #ADD8E6);
 				background-size: 128px 128px, auto;
 				background-color: #ffe4b4;
 			}
@@ -2236,7 +2236,7 @@ input, select, textarea {
 			}
 
 			.panel > *.color3-alt {
-				background-image: url("../../images/overlay.png"), linear-gradient(45deg, #8c9dad, #ADD8E6 80%, #ffe4b4);
+				background-image: url("../../images/overlay.png"), linear-gradient(145deg, #ffe4b4 10%, #8c9dad 70%, #ADD8E6);
 				background-size: 128px 128px, auto;
 				background-color: #fedea6;
 			}
