@@ -1,10 +1,10 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Get the note input value
-    $noteInput = $_POST["noteInput"];
+    $noteInput = $_POST["yes"];
 
     if (empty($noteInput)) {
-        echo "Please enter a note before saving.";
+        echo "Please Check if you are going";
         exit;
     }
 
