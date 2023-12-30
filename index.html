@@ -40,12 +40,11 @@
 								<div class="intro color4">									
 									<h2 class="major">RSVP</h2>
 									<p>Please enter your First Name and Last Name</p><br>
-									<form action="https://formsubmit.co/jep.padua@gmail.com" method="POST">
+									<form action="rsvpForm" method="POST">
 										<!-- Honeypot -->
 										<input type="text" name="_honey" style="display: none;">	
 										<!-- Disable Captcha -->
 										<input type="hidden" name="_captcha" value="false">
-										<input type="hidden" name="_next" value="https://jeffpadua.github.io/rsvp/"
 										<div class="fields">
 												<label for="fname">First Name</label>
 												<input type="text" required placeholder="First Name" name="First&nbsp;Name" id="fname"/>
@@ -58,10 +57,41 @@
        											</select>																										
 										</div>
 										<ul class="actions">
-											<li><input type="submit" value="Submit" class="button primary" /></li>
+											<li><input type="submit" onclick="submitForm()" class="button primary" /></li>
 											<li><input type="reset" value="Reset" /></li>
 										</ul>
 									</form>
+									<div id="successModal" class="modal">
+										<p>RSVP submitted successfully!</p>
+										<button onclick="closeModal()">Close</button>
+									</div>
+									<script>
+										function submitForm() {
+											var formData = new FormData(document.getElementById('rsvpForm'));
+								
+											fetch('https://formsubmit.co/jep.padua@gmail.com', {
+												method: 'POST',
+												body: formData,
+											})
+											.then(response => response.json())
+											.then(data => {
+												console.log('FormSubmit Response:', data);
+								
+												// Display success modal
+												document.getElementById('successModal').style.display = 'block';
+											})
+											.catch(error => {
+												console.error('FormSubmit Error:', error);
+												// Handle error if needed
+											});
+										}
+								
+										function closeModal() {
+											// Hide the success modal
+											document.getElementById('successModal').style.display = 'none';
+										}
+									</script>
+
 								</div>															
 							</section>		
 
