@@ -11,15 +11,9 @@
 		<link rel="shortcut icon" type="image/x-icon" href="J&M.png" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			body {
-				font-family: Arial, sans-serif;
-				margin: 0;
-				padding: 0;
-				background-color: #f4f4f4;
-			}
-	
+		
 			.container {
-				max-width: 600px;
+				max-width: 300px;
 				margin: 50px auto;
 				background-color: #fff;
 				padding: 20px;
@@ -40,7 +34,7 @@
 			}
 	
 			button {
-				background-color: #4caf50;
+				background-color: #ffe4b4;
 				color: #fff;
 				border: none;
 				cursor: pointer;
@@ -59,7 +53,7 @@
 			}
 	
 			.modal-content {
-				background: #fff;
+				background: #8c9dad;
 				padding: 20px;
 				border-radius: 5px;
 				text-align: center;
@@ -125,12 +119,7 @@
 										</ul>
 									</form>
 									
-									<div id="successModal" class="modal">
-										<div class="modal-content">
-											<span class="close" onclick="closeModal()">&times;</span>
-											<p>RSVP Submitted Successfully!</p>
-										</div>
-									</div>
+									
 
 									<script>
 										// Function to show the success modal
@@ -170,7 +159,7 @@
 
 								</div>															
 							</section>		
-
+							
 						<!-- Dress Code -->
 						<section class="panel">
 							<div class="intro color2">
@@ -242,7 +231,15 @@
 					</div>
 
 			</div>
-
+			<div id="successModal" class="modal">
+				<div class="modal-content">
+					<span class="close" onclick="closeModal()">&times;</span>
+					<p>RSVP Submitted Successfully!</p>
+					<ul class="actions">
+						<li><input type="close" value="close" class="button primary" id="closeButton" onclick="closeModal()"></li>
+					</ul>					
+				</div>
+			</div>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
