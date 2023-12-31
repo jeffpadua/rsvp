@@ -110,13 +110,13 @@
 									<form id="rsvpForm" action="https://sheetdb.io/api/v1/crdk8qmmcatuu" method="POST" id="sheetdb-form">
 										<div class="fields">
 												<label for="FirstName">First Name</label>
-												<input type="text" required placeholder="First Name" name="data[FirstName]" id="FirstName"/>
+												<input type="text" oninput="convertToUpperCase(this)" required placeholder="First Name" name="data[FirstName]" id="FirstName"/>
 												<label for="LastName">Last Name</label>
-												<input type="text" required placeholder="Last Name" name="data[LastName]" id="LastName"/>
+												<input type="text" oninput="convertToUpperCase(this)" required placeholder="Last Name" name="data[LastName]" id="LastName"/>
 												<label for="Attendance">Will you attend?</label>
         										<select id="Attendance" name="data[Attendance]" required>
-        										    <option value="yes">Yes</option>
-        										    <option value="no">No</option>
+        										    <option value="YES">Yes</option>
+        										    <option value="NO">No</option>
        											</select>																										
 										</div>
 										<ul class="actions">
@@ -125,6 +125,12 @@
 										</ul>
 									</form>
 									<script>
+										function convertToUpperCase(input) {
+										  input.value = input.value.toUpperCase();
+										}
+									  </script>
+									<script>
+																				
 										var form = document.getElementById('sheetdb-form');
 										form.addEventListener("submit", e => {
 											e.preventDefault();
@@ -133,13 +139,12 @@
 												body: new FormData(document.getElementById("sheetdb-form")),
 											}).then(
 												response => response.json()
-											).then((html)) => {
+											).then((html) => {
 												window.open('index.html','_blank');
-											}
+											});
 											
 										});
 									</script>
-
 									<script>
 										// Function to show the success modal
 										function openModal() {
