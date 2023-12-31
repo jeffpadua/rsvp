@@ -66,6 +66,12 @@
 				right: 10px;
 				font-size: 20px;
 			}
+
+			video {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
 		</style>
 	</head>
 	<body class="is-preload">
@@ -90,76 +96,44 @@
 									<img src="images/pic01.jpg" alt="" />
 								</div>
 							</section>
-								
+
+						<!-- Video -->
+							<video autoplay loop muted playsinline controls>
+								<source src="Jefferson and Michaela STD.mp4" width="device-width" type="video/mp4">
+							</video>								
+					
 						<!-- RSVP -->					
 							<section class="panel color4-alt" id="first">								
-								
 								<div class="intro color4">									
 									<h2 class="major">RSVP</h2>
 									<p>Please enter your First Name and Last Name</p><br>
-									<form id="rsvpForm" action="https://formsubmit.co/jep.padua@gmail.com" method="POST">
-										<!-- Honeypot -->
-										<input type="text" name="_honey" style="display: none;">	
-										<!-- Disable Captcha -->
-										<input type="hidden" name="_captcha" value="false">
+									<form id="rsvpForm" method="POST">
 										<div class="fields">
 												<label for="fname">First Name</label>
-												<input type="text" required placeholder="First Name" name="First&nbsp;Name" id="fname"/>
+												<input type="text" required placeholder="First Name" name="fname" id="fname"/>
 												<label for="lname">Last Name</label>
-												<input type="text" required placeholder="Last Name" name="Last&nbsp;Name" id="lname"/>
-												<label for="Attending">Will you attend?</label>
-        										<select id="Attending" name="attend" required>
+												<input type="text" required placeholder="Last Name" name="lname" id="lname"/>
+												<label for="attendance">Will you attend?</label>
+        										<select id="attendance" name="attendance" required>
         										    <option value="yes">Yes</option>
         										    <option value="no">No</option>
        											</select>																										
 										</div>
 										<ul class="actions">
-											<li><input type="submit" value="submit" class="button primary" /></li>
+											<li><input type="submit" onclick="submitRSVP()" class="button primary" /></li>
 											<li><input type="reset" value="Reset" /></li>
 										</ul>
 									</form>
 									
+									<script src="https://apis.google.com/js/api.js"></script>
+    								<script src="script.js"></script>
+
 									
 
-									<script>
-										// Function to show the success modal
-										function openModal() {
-											document.getElementById('successModal').style.display = 'flex';
-										}
-									
-										// Function to close the success modal
-										function closeModal() {
-											document.getElementById('successModal').style.display = 'none';
-										}
-									
-										// Form submission handling
-										document.getElementById('rsvpForm').addEventListener('submit', function (event) {
-											event.preventDefault();
-									
-											// You may add additional validation here if needed
-									
-											// Submit the form using FormSubmit
-											fetch(this.action, {
-												method: 'POST',
-												body: new FormData(this),
-											})
-											.then(response => {
-												if (response.ok) {
-													// Show the success modal
-													openModal();
-													// You can add additional actions here if needed
-												} else {
-													// Handle the error case
-													console.error('Error submitting form:', response.statusText);
-												}
-											})
-											.catch(error => console.error('Error:', error));
-										});
-									</script>
-
-								</div>															
-							</section>		
-							
+								</div>	
+																						
+							</section>	
+						
 						<!-- Dress Code -->
 						<section class="panel">
 							<div class="intro color2">
